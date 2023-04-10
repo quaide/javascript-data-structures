@@ -6,6 +6,14 @@ class QuaideArray {
         this.length += 1;
       }
     }
+
+    static of() {
+        let result = new QuaideArray()
+        for(let i = 0; i < arguments.length; i++) {
+            result.push(arguments[i])
+        }
+        return result
+    }
   
     static isArray(value) {
       return value instanceof QuaideArray;
@@ -47,3 +55,5 @@ console.log(test)
 
 console.log(test instanceof QuaideArray)
 console.log(QuaideArray.isArray(test))
+let test5 = QuaideArray.of('Quaide', 'Kelsey', 'Tyler')
+console.log(test5)
