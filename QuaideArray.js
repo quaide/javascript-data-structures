@@ -7,6 +7,21 @@ class QuaideArray {
       }
     }
 
+    at(index) {
+        if(index < -this.length) {
+            return undefined
+        }
+        if(index >= this.length) {
+            return undefined
+        }
+        if(index >= 0) {
+            return this[index]
+        }
+        else{
+            return this[index + this.length]
+        }
+    }
+
     static of() {
         let result = new QuaideArray()
         for(let i = 0; i < arguments.length; i++) {
@@ -57,3 +72,5 @@ console.log(test instanceof QuaideArray)
 console.log(QuaideArray.isArray(test))
 let test5 = QuaideArray.of('Quaide', 'Kelsey', 'Tyler')
 console.log(test5)
+console.log(test.at(43))
+
